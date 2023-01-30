@@ -1,0 +1,21 @@
+client:
+	gcc client.c -o client -lrt -lpthread
+
+logger:
+	gcc logger.c -o logger -lrt -lpthread
+
+clean:
+	rm *.o *.out client logger
+
+run.client:
+	./client
+
+run.logger:
+	./logger
+
+see.messages:
+    tail -f /tmp/example.log
+
+remove.semaphores:
+    cd /dev/shm
+    rm *
